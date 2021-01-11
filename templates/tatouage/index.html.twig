@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réalisations - L'Aiguille Du Marquiste{% endblock %}
+
+{% block body %}
+    <h1>Mes Réalisations</h1>
+
+   {% for row in tatouages|batch(3) %}
+   {% for tatouages in row %}
+            <div class="row mb-5">
+            {% for tatouage in tatouages.tatouages %}
+                <div class="col-md-4">
+                    <article class="tatouage bg-white rounded shadow">
+                        <div class="mw-100 rounded-top overflow-hidden">
+                            <a href="{{path('show', {'slug':tatouage.slug})}}">
+                                <img src="{{ asset('uploads/' ~ tatouage.illustration) | imagine_filter('squared_thumbnail_medium') }}" alt="{{ tatouage.name }}" class="w-100">
+                            </a>
+                        </div>
+                        <h2 class="h5 pl-3 pt-3"><a class="text-secondary text-decoration-none" href="{{path('show', {'slug':tatouage.slug})}}">{{ tatouage.name}}</a> </h2>
+                        <p class="pl-3 pb-3 text-muted">{{ tatouage.description|u.truncate(10, '...', false) }}</p>
+                        <p class="text-muted pl-3 pb-3"><small>Submitted by L'Aiguille Du Marquiste</small></p>
+                    </article>
+                </div>
+            {% endfor %}
+            </div>
+        {% endfor %}
+        {% endfor %}
+    </div>
+{% endblock %}

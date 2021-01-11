@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{tatouage.name}} - L'Aiguille Du Marquiste {% endblock %}
+
+{% block body %}
+    <h1>{{tatouage.name}}</h1>
+
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <article class="tatouage bg-white rounded shadow">
+                <div class="mw-100 rounded-top overflow-hidden">
+                    <img src="/uploads/{{tatouage.illustration}}" alt="{{ tatouage.name }}" class="w-100">
+                </div>
+                <h1 class="text-secondary h5 pl-3 pt-3">{{ tatouage.name }}</h1>
+                <p class="text-muted pl-3 pb-3">
+                    <small>
+                        Submitted 
+                        by 
+                    </small>
+                </p>
+                <p class="pl-3 pr-3 pb-3 text-break">{{ tatouage.description }}</p>
+            </article>
+        </div>
+    </div> 
+
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}L'aiguille Du Marquiste{% endblock %}
+
+{% block body %}
+{% block carousel %}{% endblock %}
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+      <h3 class="mb-5 font-weight-bold">Dernière réalisation</h3>
+    <div class="row">
+      {% for tatouage in tatouages %}
+        <div class="col-md-3">
+            <article class="tatouage bg-white rounded shadow">
+                <div class="mw-100 rounded-top overflow-hidden">
+                    <a href="{{path('show', {'slug':tatouage.slug})}}">
+                        <img src="{{ asset('uploads/' ~ tatouage.illustration) | imagine_filter('squared_thumbnail_medium') }}" alt="{{ tatouage.name }}" class="w-100">
+                    </a>
+                </div>
+            </article>
+        </div>
+      {% endfor %}
+    </div><!-- /.row -->
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+      <div class="col-md-5">
+        <img src="{{ asset('uploads/thai.jpg') | imagine_filter('squared_thumbnail_large') }}" alt="image-deco-tatouage" class="w-100">
+
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img src="{{ asset('uploads/dos.jpg') | imagine_filter('squared_thumbnail_large') }}" alt="image-deco-tatouage" class="w-100">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+      <div class="col-md-5">
+        <img src="{{ asset('uploads/panda.jpg') | imagine_filter('squared_thumbnail_large') }}" alt="image-deco-tatouage" class="w-100">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
+
+
+{% endblock %}

@@ -1,0 +1,82 @@
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+.block-small{
+    max-width: 600px;
+    margin: 0 auto;
+}
+body{
+    font-family: Montserrat, sans-serif;
+    position: relative;
+}
+.footer-custom{
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    padding-top: 25px;
+    margin-top: 50px;
+    color: white;
+}
+.footer-a{
+  text-shadow: 1px 1px 2px rgb(112, 111, 111), 0 0 1em rgb(112, 111, 111), 0 0 0.2em rgb(112, 111, 111);
+  color: white;
+}
+.footer-a:hover{
+  color: black;
+  text-decoration: none;
+}
+.contact-a{
+  color: black;
+}
+.contact-a:hover{
+  text-decoration: none;
+  color: white;
+}
+.enseigne{
+  font-family: 'Satisfy', cursive;
+  margin-right: 5rem;
+}
+.logo a img{
+  transition: transform 0.3s ease-out;
+  height: 48px;
+  margin: 5px;
+}
+.logo a img:hover{
+  transform: scale(1.25);
+  background-color: white;
+  border-radius: 15px;
+  }
+.vich-image .form-check {
+  @extend .mt-3;
+}
+.vich-image img {
+  @extend .mb-2;
+  @extend .rounded;
+  @extend .shadow;
+  @extend .img-thumbnail;
+}
+.tatouage img{
+  transition: transform 0.3s ease-out;
+}
+.tatouage img:hover{
+      transform: scale(1.075);
+}
+.home-section{
+  background-image: linear-gradient(rgba(255, 255, 255, 0.9),
+                   rgba(255, 255, 255, 0.9)),
+                    url('../../img-vince/vince2.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: right 0% bottom 5%;
+}
+
